@@ -54,7 +54,6 @@ header {
 
 
 .image_4 {
-    transition: width 2s;
     width: 25%;
     float: left;
     height: 100vh;
@@ -62,7 +61,7 @@ header {
     -webkit-transition: background-color 2s ease-out;
     -moz-transition: background-color 2s ease-out;
     -o-transition: background-color 2s ease-out;
-    transition: background-color 2s ease-out;
+    transition: width 2s, background-color 2s ease-out;
 }
 
 .image_1:hover {
@@ -183,4 +182,48 @@ header {
     background-size: cover;
     height: 100vh;
     background-color: #FFDDE2FF;
+}
+
+.selected_image_1 {
+    opacity: 0;
+    transition: opacity 2s;
+}
+.selected .selected_image_1 {
+    opacity: 1;
+}
+
+.selected_image_2 {
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.selected .selected_image_2 {
+    opacity: 1;
+}
+
+.selected_image_3 {
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.selected .selected_image_3 {
+    opacity: 1;
+}
+
+.selected_image_4 {
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.selected .selected_image_4 {
+    opacity: 1;
+}
+
+.inner_image {
+    transition: opacity 0.5s ease-in-out 2s;
+}
+
+.full-screen-mode .inner_image {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
 }

@@ -9,27 +9,29 @@ const IMAGE_NAMES = [
     'image_4'
 ];
 
-const TEXT_NAMES = [
-    'copy-1',
-    'copy-2',
-    'copy-3',
-    'copy-4'
-];
-
 var expandScreen = function(event, selectedImageName) {
     event.stopPropagation();
 
     const selectedDiv = document.getElementsByClassName(selectedImageName);
     const isFullScreen = selectedDiv[0].style.width === "100%"
 
-    for (const textName of TEXT_NAMES) {
-        const pTag = document.getElementsByClassName(textName)[0];
-        pTag.style.visibility = isFullScreen ? "visible" : "hidden";
+    const header = document.getElementById("header");
+    if (!isFullScreen) {
+        header.classList.add("full-screen-mode");
+    }
+    else {
+        header.classList.remove("full-screen-mode");
     }
 
     for (const imageName of IMAGE_NAMES) {
         if (selectedImageName == imageName) {
             selectedDiv[0].style.width = isFullScreen ? "25%" : "100%";
+            if (isFullScreen) {
+                selectedDiv[0].classList.remove("selected");
+            }
+            else {
+                selectedDiv[0].classList.add("selected");
+            }
         } else {
             const otherDiv = document.getElementsByClassName(imageName)[0];
             otherDiv.style.width = isFullScreen ? "25%" : "0%";
