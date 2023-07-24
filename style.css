@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background-color: #ffffff;
+    background-color: rgb(14, 14, 14);
+    overflow: hidden;
+}
+
+.homepage {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    background-color: black;
+    flex-direction: row;
+    width: 100%;
+    padding-left: 1.5%;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    z-index: 3;
+}
+
+.middle {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    z-index: 4;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+}
+
+.left img {
+    width: 99%;
+    transition: .8s;
+    transform: translate3d(0, 0, 0);
+    margin-right: 1%;
+}
+
+.middle img {
+    width: 98%;
+    transition: .8s;
+    transform: translate3d(0, 0, 0);
+}
+
+.right img {
+    width: 97%;
+    transition: .8s;
+    transform: translate3d(0, 0, 0);
+    padding-right: 2%;
+}
+
+/* CODE FOR ONHOVER EFFECTS */
+.content-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+}
+
+.inner-text {
+    position: absolute;
+    color: white;
+    width: 22%;
+    font-weight: 200;
+    line-height: 60px;
+    cursor: default;
+    opacity: 0;
+    transition: 0.2s all ease-in-out;
+}
+
+.credits-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    justify-content: space-between;
+    opacity: 0;
+    transition: 0.2s all ease-in-out;
+}
+
+.inner {
+    color: white;
+    margin-right: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 200;
+    line-height: 40px;
+    cursor: default;
+    transition: 0.2s all ease-in-out;
+}
+
+/* Fade Ins (TEXT) */
+.fade-left {
+    transform: translate3d(-50px, 0, 0);
+}
+
+.fade-right {
+    transform: translate3d(50px, 0, 0);
+}
+
+.fade-up {
+    transform: translate3d(0, 50px, 0);
+}
+
+.fade-down {
+    transform: translate3d(0, -50px, 0);
+}
+/* End Fade Ins */
+
+/* Fade Ins (IMAGE) */
+.content-overlay:hover > .fade-right-img {
+    opacity: 0;
+    transform: translate3d(100px, 0, 0);
+}
+
+.content-overlay:hover > .fade-left-img {
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+}
+
+.content-overlay:hover > .fade-up-img {
+    opacity: 0;
+    transform: translate3d(0, -100px, 0);
+}
+
+.content-overlay:hover > .fade-down-img {
+    opacity: 0;
+    transform: translate3d(0, 100px, 0);
+}
+/* End Fade Ins */
+
+.content-overlay:hover > .inner-text {
+    opacity: 1;
+    transition: 1s all ease-in-out;
+    transform: translate3d(0, 0, 0);
+}
+
+.content-overlay:hover > .credits-container {
+    opacity: 1;
+    transition: 1s all ease-in-out;
+    transform: translate3d(0, 0, 0);
+}
